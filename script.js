@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const lightboxLink = document.createElement("a");
     lightboxLink.id = "lightbox-link";
-    lightboxLink.textContent = "Подробнее";
+    lightboxLink.textContent = "Игрушка в интернет-магазине";
     lightboxLink.target = "_blank";
     lightboxLink.style.display = "none";
     lightbox.appendChild(lightboxLink);
