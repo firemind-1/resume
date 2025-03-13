@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Услуги - ИП Кривошеин Алексей Сергеевич</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="yandex-verification" content="7de62e41b72e9dde" />
+  <!-- Фавикон (при необходимости) -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- Тема Midnight -->
+  <link rel="stylesheet" href="https://pages-themes.github.io/midnight/assets/css/style.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    /* Шапка, соцсети, навигация */
+    .site-header {
+      position: relative;
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    .site-header h1 {
+      margin: 0;
+      color: #5282ff;
+      font-size: 24px;
+    }
+    /* Блок справа в шапке: навигация + бургер + соцсети */
+    .header-right {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    /* Навигация (desktop) */
+    .site-nav {
+      display: flex;
+      gap: 15px;
+    }
+    .site-nav a {
+      color: #5282ff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .site-nav a:hover {
+      text-decoration: underline;
+    }
+    /* Бургер-иконка (мобильная) */
+    .burger-icon {
+      display: none;
+      font-size: 24px;
+      color: #5282ff;
+      cursor: pointer;
+    }
+    /* Соцсети */
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+    .social-links a {
+      color: #5282ff;
+      text-decoration: none;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+    /* Мобильное меню (изначально скрыто) */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 70px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 10px;
+      border-radius: 5px;
+      text-align: right;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mobile-menu a {
+      display: block;
+      margin: 5px 0;
+      color: #5282ff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .mobile-menu a:hover {
+      text-decoration: underline;
+    }
+    /* На мобильных: скрываем десктоп-меню, показываем бургер */
+    @media (max-width: 600px) {
+      .site-nav {
+        display: none;
+      }
+      .burger-icon {
+        display: block;
+      }
+      /* Соцсети переходят в статичный блок под шапкой */
+      .social-links {
+        position: static;
+        margin-top: 10px;
+        justify-content: center;
+      }
+    }
+
+    /* Основной контейнер */
+    .page-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Блок услуг */
+    .services-wrapper {
+      background: rgba(255, 255, 255, 0.1);
+      box-sizing: border-box;
+      padding: 20px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .services-header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .services-header h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3498db;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #e74c3c;
+      padding-bottom: 5px;
+    }
+    .services-header p {
+      font-size: 14px;
+      color: #ecf0f1;
+      margin: 0;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .service-item {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      text-align: center;
+      transition: box-shadow 0.3s;
+      width: 100%;
+      max-width: 300px;
+    }
+    .service-item:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    }
+    .service-item i {
+      font-size: 2rem;
+      color: #5282ff;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+    .service-item h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .service-item p {
+      font-size: 14px;
+      color: #ecf0f1;
+      line-height: 1.5;
+    }
+    @media (max-width: 890px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+      .service-item {
+        max-width: 100%;
+      }
+    }
+    @media (max-width: 480px) {
+      .services-wrapper {
+        padding: 15px;
+      }
+      .services-header {
+        margin-bottom: 15px;
+      }
+      .services-header h2 {
+        font-size: 18px;
+      }
+      .services-header p {
+        font-size: 12px;
+      }
+      .service-item {
+        padding: 15px;
+      }
+      .service-item h3 {
+        font-size: 14px;
+      }
+      .service-item p {
+        font-size: 12px;
+      }
+      .service-item i {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Блок стоимости услуг */
+    .pricing-wrapper {
+      margin: 0 auto 20px auto;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 5px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+    .pricing-wrapper h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: #3498db;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #e74c3c;
+      padding-bottom: 5px;
+    }
+    .pricing-wrapper p {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 15px;
+    }
+    .pricing-wrapper p strong {
+      color: #fff;
+      font-weight: 600;
+    }
+    .pricing-wrapper ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0;
+    }
+    .pricing-wrapper ul li {
+      font-size: 14px;
+      color: #ccc;
+      margin-bottom: 10px;
+    }
+    .pricing-wrapper a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #5282ff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background 0.3s;
+      margin-top: 10px;
+    }
+    .pricing-wrapper a:hover {
+      background: #3b6ad1;
+    }
+
+    /* Бегущая строка (терминал) */
+    .terminal-marquee {
+      background: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 10px 0;
+      overflow: hidden;
+      position: relative;
+      margin-top: 40px;
+    }
+    .marquee-text {
+      display: inline-block;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      animation: marquee 110s linear infinite, showText 0s 0.3s forwards;
+      animation-delay: 0.3s;
+    }
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    @keyframes showText {
+      to {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+
+    /* Футер */
+    .site-footer {
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    /* Кнопка "Наверх" */
+    .to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #5282ff;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0s linear 0.3s;
+      z-index: 1000;
+    }
+    .to-top.show {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 0.3s;
+    }
+    .to-top:hover {
+      background: #3b6ad1;
+    }
+    .to-top i {
+      line-height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Шапка -->
+  <header class="site-header">
+    <div class="header-top">
+      <h1>Кривошеин Алексей Сергеевич</h1>
+      <div class="header-right">
+        <nav class="site-nav">
+          <a href="index.html">Услуги</a>
+          <a href="resume.html">Резюме</a>
+        </nav>
+        <i class="fas fa-bars burger-icon"></i>
+      </div>
+    </div>
+    <!-- Мобильное меню -->
+    <nav class="mobile-menu" id="mobileMenu">
+      <a href="index.html">Услуги</a>
+      <a href="resume.html">Резюме</a>
+    </nav>
+    <!-- Соцсети -->
+    <div class="social-links">
+      <a href="https://t.me/drslon_channel" target="_blank" rel="noopener">Telegram</a>
+      <a href="https://vk.com/drslon_channel" target="_blank" rel="noopener">VK</a>
+      <a href="https://tenchat.ru/krivoshein" target="_blank" rel="noopener">TenChat</a>
+      <a href="https://github.com/A-Krivoshen" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/krivosheinaleksey/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://krivoshein.site/" target="_blank" rel="noopener">Сайт</a>
+    </div>
+  </header>
+
+  <!-- Основное содержимое -->
+  <main class="page-content">
+
+    <!-- Блок "Услуги" -->
+    <div class="services-wrapper">
+      <div class="services-header">
+        <h2>Услуги</h2>
+        <p>Индивидуальный подход и профессиональная реализация для вашего бизнеса</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-item">
+          <i class="fas fa-code"></i>
+          <h3>Кастомизация HTML/CSS/PHP</h3>
+          <p>Индивидуальная настройка и доработка вашего сайта под любые задачи.</p>
+        </div>
+        <div class="service-item">
+          <i class="fab fa-docker"></i>
+          <h3>Интеграция сервисов в Docker</h3>
+          <p>Оптимизация инфраструктуры с помощью Docker для стабильной работы приложений.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-server"></i>
+          <h3>Настройка VPS</h3>
+          <p>Полная настройка виртуального сервера для надежной работы вашего проекта.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-network-wired"></i>
+          <h3>Настройка сетевых служб</h3>
+          <p>Профессиональная настройка и управление сетевыми сервисами.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-globe"></i>
+          <h3>Услуги по регистрации домена</h3>
+          <p>Помощь в подборе и регистрации домена для вашего бизнеса.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-cloud"></i>
+          <h3>Настройки/Миграция в Облако</h3>
+          <p>Перенос вашего бизнеса в облачные сервисы для повышения гибкости.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-shield-alt"></i>
+          <h3>Безопасность сайта</h3>
+          <p>Анализ и устранение угроз, включая вредоносный код.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-tachometer-alt"></i>
+          <h3>Оптимизация скорости сайта</h3>
+          <p>Ускорение загрузки сайта для улучшения пользовательского опыта.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-project-diagram"></i>
+          <h3>Подключение к CDN</h3>
+          <p>Настройка и оптимизация CDN для ускорения сайта.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-ad"></i>
+          <h3>Контекстная реклама</h3>
+          <p>Управление кампаниями в Яндекс.Директ для привлечения клиентов.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-tools"></i>
+          <h3>Техническая поддержка сайта</h3>
+          <p>Профессиональная техподдержка для стабильной работы сайта.</p>
+        </div>
+        <div class="service-item">
+          <i class="fas fa-search"></i>
+          <h3>SEO аудит сайта</h3>
+          <p>Комплексный анализ сайта для повышения его позиций.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Блок "Стоимость услуг" -->
+    <div class="pricing-wrapper">
+      <h2>Стоимость услуг</h2>
+      <p>Индивидуальный подход к каждой задаче.<br>Моя базовая ставка:<br><strong>2000 ₽/час</strong>.</p>
+      <ul>
+        <li>💡 Чем точнее описана задача, тем быстрее она будет выполнена.</li>
+        <li>🛠️ Финальная стоимость зависит от сложности проекта и ваших ожиданий.</li>
+        <li>📞 Первичная консультация — бесплатно.</li>
+      </ul>
+      <a href="mailto:aleksey@krivoshein.site?subject=Обсуждение проекта">Обсудить проект</a>
+    </div>
+
+    <!-- Бегущая строка (терминал) -->
+    <div class="terminal-marquee">
+      <span class="marquee-text">
+        >>> Разработка сайтов: создание адаптивных сайтов под ключ, интеграция CMS (WordPress, Joomla), SEO-оптимизация, ускорение загрузки через CDN и кэширование... Настройка серверов: установка Linux/Windows Server, настройка VPS, автоматизация через Ansible, обеспечение безопасности (SSL, фаерволы)... Облачные решения: миграция на Yandex Cloud, Cloud.ru, настройка масштабируемых решений... Контекстная реклама: настройка Яндекс.Директ, Google Ads, ремаркетинг, аналитика через Метрику и GA... Техподдержка: мониторинг, обновления, защита от DDoS... Аудит: проверка скорости, безопасности, SEO-позиций... Свяжитесь со мной для обсуждения вашего проекта! <<< >>> Разработка сайтов: создание адаптивных сайтов под ключ, интеграция CMS (WordPress, Joomla), SEO-оптимизация, ускорение загрузки через CDN и кэширование... Настройка серверов: установка Linux/Windows Server, настройка VPS, автоматизация через Ansible, обеспечение безопасности (SSL, фаерволы)... Облачные решения: миграция на Yandex Cloud, Cloud.ru, настройка масштабируемых решений... Контекстная реклама: настройка Яндекс.Директ, Google Ads, ремаркетинг, аналитика через Метрику и GA... Техподдержка: мониторинг, обновления, защита от DDoS... Аудит: проверка скорости, безопасности, SEO-позиций... Свяжитесь со мной для обсуждения вашего проекта! <<<           
+      </span>
+    </div>
+  </main>
+
+  <!-- Кнопка "Наверх" -->
+  <button class="to-top" id="toTopBtn">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <!-- Футер -->
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Кривошеин Алексей Сергеевич. Все права защищены.</p>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <!-- Скрипт бургер-меню -->
+    <script>
+      const burgerIcon = document.querySelector('.burger-icon');
+      const mobileMenu = document.getElementById('mobileMenu');
+      burgerIcon.addEventListener('click', () => {
+        mobileMenu.style.display = mobileMenu.style.display === 'block' ? 'none' : 'block';
+      });
+    </script>
+    <!-- Скрипт кнопки "Наверх" -->
+    <script>
+      const toTopBtn = document.getElementById('toTopBtn');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Показывать кнопку при прокрутке вниз на 300px
+          toTopBtn.classList.add('show');
+        } else {
+          toTopBtn.classList.remove('show');
+        }
+      });
+      toTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); // Плавная прокрутка вверх
+      });
+    </script>
+  </footer>
+       <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(100254330, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/100254330" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->   
+</body>
+</html>
