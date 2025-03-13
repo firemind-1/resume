@@ -13,6 +13,7 @@
             <ul class="nav-links">
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#testimonials">Отзывы</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
             <div class="burger-menu" onclick="toggleMenu()">
@@ -24,6 +25,14 @@
     </header>
     
     <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Создаю уникальные мягкие игрушки</h1>
+                <p>Индивидуальный подход и высокое качество исполнения</p>
+                <button class="hero-button" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">Посмотреть работы</button>
+            </div>
+        </section>
+        
         <section id="about" class="about">
             <h2>Обо мне</h2>
             <p>Привет! Я — конструктор мягких игрушек, создаю уникальные изделия с любовью и вниманием к деталям.</p>
@@ -33,6 +42,88 @@
         <section id="gallery" class="gallery">
             <h2>Галерея работ</h2>
             <div class="gallery-container" id="gallery"></div>
+        </section>
+        
+        <section id="testimonials" class="testimonials">
+            <h2>Отзывы</h2>
+            <div class="testimonial">
+                <p>"Прекрасные игрушки! Очень мягкие и красивые!" – Анна</p>
+            </div>
+            <div class="testimonial">
+                <p>"Игрушка превзошла все ожидания, ребёнок в восторге!" – Михаил</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer id="contact">
+        <h2>Контакты</h2>
+        <p>Email: example@email.com</p>
+        <p>Instagram: <a href="https://instagram.com/toy_creator" target="_blank">@toy_creator</a></p>
+        <p>&copy; 2025 Конструктор игрушек. Все права защищены.</p>
+    </footer>
+    
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector(".nav-links");
+            nav.classList.toggle("active");
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор мягкой игрушки</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Конструктор мягкой игрушки</div>
+            <ul class="nav-links">
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#testimonials">Отзывы</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <div class="burger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1>Создаю уникальные мягкие игрушки</h1>
+                <p>Индивидуальный подход и высокое качество исполнения</p>
+                <button class="hero-button" onclick="document.getElementById('gallery').scrollIntoView({behavior: 'smooth'})">Посмотреть работы</button>
+            </div>
+        </section>
+        
+        <section id="about" class="about">
+            <h2>Обо мне</h2>
+            <p>Привет! Я — конструктор мягких игрушек, создаю уникальные изделия с любовью и вниманием к деталям.</p>
+            <button class="contact-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Связаться со мной</button>
+        </section>
+        
+        <section id="gallery" class="gallery">
+            <h2>Галерея работ</h2>
+            <div class="gallery-container" id="gallery"></div>
+        </section>
+        
+        <section id="testimonials" class="testimonials">
+            <h2>Отзывы</h2>
+            <div class="testimonial">
+                <p>"Прекрасные игрушки! Очень мягкие и красивые!" – Анна</p>
+            </div>
+            <div class="testimonial">
+                <p>"Игрушка превзошла все ожидания, ребёнок в восторге!" – Михаил</p>
+            </div>
         </section>
     </main>
     
