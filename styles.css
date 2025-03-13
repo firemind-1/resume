@@ -30,15 +30,20 @@ h1, h2 {
 /* Сетка галереи */
 #gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(4, 1fr); /* 4 элемента в строке */
     gap: 10px;
     padding: 20px;
+    justify-content: center;
 }
 
 .gallery-item {
     overflow: hidden;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
+    aspect-ratio: 1 / 1; /* Квадратные элементы */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .gallery-item:hover {
@@ -47,9 +52,9 @@ h1, h2 {
 
 .gallery-img {
     width: 100%;
-    height: auto;
-    border-radius: 8px;
+    height: 100%;
     object-fit: cover;
+    border-radius: 8px;
 }
 
 /* Lightbox (увеличение изображения) */
