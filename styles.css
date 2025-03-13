@@ -1,100 +1,134 @@
+/* Общий стиль сайта */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    background: linear-gradient(135deg, #f4f4f9, #dfe9f3);
     color: #333;
     text-align: center;
 }
 
-header {
-    background: rgba(255, 255, 255, 0.8);
+.container {
+    width: 80%;
+    margin: auto;
     padding: 20px;
-    font-size: 24px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.about {
-    padding: 40px 20px;
-    background: rgba(255, 255, 255, 0.9);
-    margin: 20px;
+h1, h2 {
+    color: #222;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+h1 {
+    font-size: 2.5em;
+    background: linear-gradient(90deg, #ff8a00, #e52e71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Раздел "Обо мне" */
+#about {
+    background: white;
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
 }
 
-.gallery {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 20px;
+#about:hover {
+    transform: scale(1.02);
 }
 
-.gallery-container {
+#about h2 {
+    text-align: center;
+    border-bottom: 3px solid #e52e71;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Сетка галереи */
+#gallery {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    max-width: 80%;
+    gap: 15px;
+    padding: 20px;
+    justify-content: center;
+    max-width: 1200px;
     margin: auto;
 }
 
 .gallery-item {
-    position: relative;
     overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
     cursor: pointer;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.3s ease-in-out;
-    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
-.lightbox {
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Lightbox (увеличение изображения) */
+#lightbox {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
 }
 
-.lightbox.show {
+#lightbox.active {
     opacity: 1;
     visibility: visible;
 }
 
-.lightbox img {
+#lightbox img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
+    animation: fadeIn 0.3s ease-in-out;
 }
 
-.lightbox .close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: red;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 20px;
-    border-radius: 5px;
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Анимация появления секций при прокрутке */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
