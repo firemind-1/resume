@@ -8,13 +8,18 @@
 </head>
 <body>
     <header>
-        <nav>
-            <h1>Конструктор мягкой игрушки</h1>
-            <ul>
+        <nav class="navbar">
+            <div class="logo">Конструктор мягкой игрушки</div>
+            <ul class="nav-links">
                 <li><a href="#about">Обо мне</a></li>
                 <li><a href="#gallery">Галерея</a></li>
                 <li><a href="#contact">Контакты</a></li>
             </ul>
+            <div class="burger-menu" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
     
@@ -38,6 +43,12 @@
         <p>&copy; 2025 Конструктор игрушек. Все права защищены.</p>
     </footer>
     
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector(".nav-links");
+            nav.classList.toggle("active");
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
