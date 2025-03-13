@@ -1,20 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
     const galleryContainer = document.getElementById("gallery");
-
-    // Список изображений (можно дополнить)
-    const images = [
-        "images/toy1.jpg",
-        "images/toy2.jpg",
-        "images/toy3.jpg"
-    ];
-
-    images.forEach(src => {
-        const imgWrapper = document.createElement("div");
-        imgWrapper.classList.add("gallery-item");
-        const img = document.createElement("img");
-        img.src = src;
+    
+    // Попытка загрузить изображения с предсказуемыми именами
+    const maxImages = 20; // Укажите максимальное количество изображений
+    for (let i = 1; i <= maxImages; i++) {
+        const imgSrc = `images/toy${i}.jpg`;
+        
+        const img = new Image();
+        img.src = imgSrc;
         img.alt = "Мягкая игрушка";
-        imgWrapper.appendChild(img);
-        galleryContainer.appendChild(imgWrapper);
-    });
+        img.onload = function () {
+            const imgWrapper = document.createElement("div");
+            imgWrapper.classList.add("gallery-item");
+            imgWrapper.appendChild(img);
+            galleryContainer.appendChild(imgWrapper);
+        };
+        img.onerror = function () {
+            console.warn(`Изображение не найдено: ${imgSrc}`);
+        };
+    }
 });
