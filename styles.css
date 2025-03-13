@@ -1,83 +1,83 @@
 body {
-    font-family: 'Poppins', sans-serif; /* Современный и дружелюбный шрифт */
-    background-color: #f9f3f1;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #444;
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    color: #333;
+    text-align: center;
 }
 
 header {
-    background: #ffb6c1;
-    color: white;
-    padding: 40px 20px;
-    font-size: 2em;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-bottom: 2px solid #f9f3f1;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    font-size: 1.8em;
-    color: #d48f80;
-    margin-bottom: 20px;
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
 .gallery-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
-    margin-top: 30px;
-    padding: 10px;
+    max-width: 90%;
+    margin: auto;
 }
 
 .gallery-item {
-    width: 220px;
-    height: 220px;
+    position: relative;
     overflow: hidden;
-    border-radius: 15px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
 }
 
 .gallery-item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-in-out;
+    border-radius: 10px;
 }
 
 .gallery-item:hover {
     transform: scale(1.05);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
-.gallery-item.expanded {
-    width: 80%;
-    height: 80%;
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.expanded {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    z-index: 1000;
-    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 15px;
 }
 
-button.close {
+.expanded img {
+    max-width: 90vw;
+    max-height: 80vh;
+}
+
+.close {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: #ff6f61;
+    background: red;
     color: white;
-    padding: 10px 15px;
-    border-radius: 50%;
     border: none;
-    font-size: 1.2em;
+    padding: 5px 10px;
     cursor: pointer;
-}
-
-button.close:hover {
-    background-color: #ff4c42;
+    font-size: 20px;
+    border-radius: 5px;
 }
