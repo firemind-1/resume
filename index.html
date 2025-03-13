@@ -1,81 +1,31 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме конструктора игрушек</title>
-    <!-- Подключаем Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Дополнительный CSS для стилизации -->
+    <title>Конструктор мягкой игрушки</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
-
 <body>
-    <header class="bg-success text-white text-center py-4">
-        <div class="container">
-            <h1>Резюме конструктора игрушек</h1>
-            <nav>
-                <ul class="nav justify-content-center">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#about">Обо мне</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#portfolio">Галерея работ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#contact">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <h1>Конструктор мягкой игрушки</h1>
+        <p>Творю уют и радость в каждом изделии</p>
     </header>
-
-    <section id="about" class="py-5 bg-light">
-        <div class="container">
-            <h2>Обо мне</h2>
-            <p>Здравствуйте! Я — профессиональный конструктор игрушек с многолетним опытом работы в создании уникальных и креативных игрушек. Мои проекты включают как традиционные деревянные игрушки, так и современные интерактивные модели. Каждый проект я разрабатываю с вниманием к деталям и стремлением к совершенству.</p>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-5">
-        <div class="container">
-            <h2>Галерея работ</h2>
-            <div class="row" id="gallery">
-                <!-- Галерея будет загружаться динамически -->
-                <div class="col-md-4 gallery-item">
-                    <img src="images/toy1.jpg" alt="Игрушка 1" class="img-fluid rounded mb-3">
-                    <p>Описание игрушки 1</p>
-                </div>
-                <div class="col-md-4 gallery-item">
-                    <img src="images/toy2.jpg" alt="Игрушка 2" class="img-fluid rounded mb-3">
-                    <p>Описание игрушки 2</p>
-                </div>
-                <div class="col-md-4 gallery-item">
-                    <img src="images/toy3.jpg" alt="Игрушка 3" class="img-fluid rounded mb-3">
-                    <p>Описание игрушки 3</p>
-                </div>
-                <!-- Дополнительные элементы будут загружаться по мере прокрутки -->
+    
+    <section class="gallery">
+        <h2>Галерея работ</h2>
+        <div class="gallery-container">
+            <div class="gallery-item" onclick="expandImage(this)">
+                <img src="img/toy1.jpg" alt="Игрушка 1">
             </div>
-            <button id="load-more" class="btn btn-success btn-lg mt-4">Загрузить больше</button>
+            <div class="gallery-item" onclick="expandImage(this)">
+                <img src="img/toy2.jpg" alt="Игрушка 2">
+            </div>
+            <div class="gallery-item" onclick="expandImage(this)">
+                <img src="img/toy3.jpg" alt="Игрушка 3">
+            </div>
         </div>
     </section>
-
-    <section id="contact" class="py-5 bg-light">
-        <div class="container">
-            <h2>Контакты</h2>
-            <p>Вы можете связаться со мной по электронной почте: <a href="mailto:example@mail.com">example@mail.com</a></p>
-        </div>
-    </section>
-
-    <footer class="bg-success text-white text-center py-3">
-        <p>&copy; 2025 Конструктор игрушек</p>
-    </footer>
-
-    <!-- Подключаем Bootstrap и JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="scripts.js"></script>
 </body>
-
 </html>
