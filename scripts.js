@@ -1,6 +1,5 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const galleryContainer = document.querySelector('.gallery-container');
-    
     const images = [
         'img/toy1.jpg',
         'img/toy2.jpg',
@@ -10,12 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     function loadImages() {
+        galleryContainer.innerHTML = ''; // Очистка старых изображений
         images.forEach(src => {
             const item = document.createElement('div');
             item.classList.add('gallery-item');
             item.innerHTML = `<img src="${src}" alt="Игрушка">`;
             item.onclick = () => expandImage(item);
             galleryContainer.appendChild(item);
+
+            // Добавление анимации появления
+            setTimeout(() => {
+                item.classList.add('fade-in');
+            }, 100);
         });
     }
 
@@ -33,5 +38,18 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Добавляем эффект наведения
+    document.addEventListener('mouseover', function(event) {
+        if (event.target.closest('.gallery-item')) {
+            event.target.closest('.gallery-item').classList.add('hovered');
+        }
+    });
+    
+    document.addEventListener('mouseout', function(event) {
+        if (event.target.closest('.gallery-item')) {
+            event.target.closest('.gallery-item').classList.remove('hovered');
+        }
+    });
+    
     loadImages();
 });
