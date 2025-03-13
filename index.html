@@ -5,24 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Конструктор мягкой игрушки</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <h1>Конструктор мягкой игрушки</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+        </nav>
     </header>
-    <main>
-        <section class="about">
+    
+    <div class="container">
+        <section id="about" class="fade-in">
             <h2>Обо мне</h2>
-            <p>Привет! Я — конструктор мягких игрушек, создаю уникальные изделия с любовью и вниманием к деталям.</p>
+            <p>Я конструктор мягких игрушек, создаю уникальные и уютные игрушки на заказ.</p>
+            <button class="contact-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Связаться со мной</button>
         </section>
-        <section class="gallery">
+        
+        <section id="gallery" class="fade-in">
             <h2>Галерея работ</h2>
-            <div class="gallery-container" id="gallery"></div>
+            <div class="gallery-grid">
+                <!-- Изображения загружаются динамически -->
+            </div>
         </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 Конструктор игрушек. Все права защищены.</p>
+    </div>
+    
+    <footer id="contact">
+        <h2>Контакты</h2>
+        <p>Email: example@email.com</p>
+        <p>Instagram: @toy_creator</p>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
