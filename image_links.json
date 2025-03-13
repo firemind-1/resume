@@ -1,1 +1,8 @@
-
+{
+    "toy1.jpg": "https://example.com/product1",
+    "toy2.jpg": "https://example.com/product2",
+    "toy3.jpg": "https://example.com/product3",
+    "toy4.jpg": "https://example.com/product4",
+    "toy5.jpg": "https://example.com/product5",
+    "toy6.jpg": "https://example.com/product6"
+}
