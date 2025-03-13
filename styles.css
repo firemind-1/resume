@@ -1,58 +1,83 @@
 body {
-    font-family: 'Arial', sans-serif;
-    text-align: center;
-    background-color: #fdf6e3;
+    font-family: 'Poppins', sans-serif; /* Современный и дружелюбный шрифт */
+    background-color: #f9f3f1;
     margin: 0;
     padding: 0;
+    color: #444;
 }
 
 header {
     background: #ffb6c1;
     color: white;
-    padding: 20px;
-    font-size: 1.5em;
+    padding: 40px 20px;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #f9f3f1;
 }
 
-.gallery {
-    margin: 20px;
+h2 {
+    font-size: 1.8em;
+    color: #d48f80;
+    margin-bottom: 20px;
 }
 
 .gallery-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding: 10px;
 }
 
 .gallery-item {
-    width: 150px;
-    height: 150px;
+    width: 220px;
+    height: 220px;
     overflow: hidden;
-    border-radius: 10px;
-    transition: transform 0.3s ease-in-out;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    cursor: pointer;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.1);
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 .gallery-item.expanded {
-    width: 400px;
-    height: 400px;
+    width: 80%;
+    height: 80%;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     background: white;
     z-index: 1000;
+    box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+button.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff6f61;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+button.close:hover {
+    background-color: #ff4c42;
 }
