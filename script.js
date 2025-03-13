@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     lightbox.id = "lightbox";
     document.body.appendChild(lightbox);
 
-    const maxImages = 20; // Укажите максимальное количество изображений
+    const maxImages = 6; // Укажите максимальное количество изображений
     for (let i = 1; i <= maxImages; i++) {
         const imgSrc = `./images/toy${i}.jpg`;
         
